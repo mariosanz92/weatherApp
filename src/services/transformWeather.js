@@ -1,5 +1,5 @@
 
-import getTemp from './../notdependencies'
+import {getTemp} from './../notdependencies'
 import {
     CLOUD,
     SUN,
