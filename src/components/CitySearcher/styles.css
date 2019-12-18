@@ -3,14 +3,15 @@
 .inputContain {
     text-align: left;
     margin: 18px 20px 30px 20px !important;
-    width: 290px
+    width: 290px;
+
    }
   
   .buttonContain{
     margin: 15px 0px 30px 10px !important;
   }
 
-/*   .add-city-cont{
-    position: fixed;
-  } */
+  .add-city-cont{
+    /* position: fixed; */
+  }
   

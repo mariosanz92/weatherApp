@@ -1,11 +1,7 @@
 
-
-
-
-
 const getTemp = kelvin => {
     const kelvinToCelsius = kelvin - 273;
-    let roundedKelvin = Number( kelvinToCelsius).toFixed(1);
+    let roundedKelvin = Number(kelvinToCelsius.toFixed(0));
     return roundedKelvin
   }
 

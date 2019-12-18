@@ -8,8 +8,10 @@ import './styles.css';
 
 
 const WeatherData = ({ data: {temperature, weatherState, humidity, wind } }) => {
+
     return (
     <div className = "weatherDataCont" >
+        
         <WeatherTemperature temperature= {temperature} weatherState={weatherState}/>
         <WeatherExtraInfo humidity= {humidity} wind= {wind}/>
         
@@ -18,7 +20,7 @@ const WeatherData = ({ data: {temperature, weatherState, humidity, wind } }) => 
 }
 WeatherData.propTypes = {
     data: PropTypes.shape({
-        temperature: PropTypes.string.isRequired,
+        temperature: PropTypes.number.isRequired,
         weatherState: PropTypes.string.isRequired,
         humidity: PropTypes.number.isRequired,
         wind: PropTypes.string.isRequired,

@@ -13,7 +13,7 @@ import {
 } from '../../../constants/weather'
 
 const icons = {
-    [THUNDER]: "day-thunderstore",
+    [THUNDER]: "day-thunderstorm",
     [CLOUD]: "cloud",
     [SUN]: "day-sunny",
     [RAIN]: "rain",
@@ -23,21 +23,21 @@ const icons = {
 
 const getWeatherIcon = weatherState => {
     const icon = icons[weatherState];
-
     const sizeIcon = "4x";
+    
     return icon ? <WeatherIcons className="wicon" name={icon} size= {sizeIcon}/> : <WeatherIcons name={icons.sunny} size={sizeIcon}/>
 };
 
 const WeatherTemperature = ({temperature, weatherState}) => (
     <div className = "weatherTemperatureCont">
         {getWeatherIcon(weatherState)}
-        <span className="temperature" >{`${temperature}`}</span>
+        <span className="temperature">{`${temperature}`}</span>
         <span className="temperatureType">{` C°`}</span>
     </div>
 );
 
 WeatherTemperature.propTypes = {
-    temperature: PropTypes.string.isRequired,
+    temperature: PropTypes.number.isRequired,
     weatherState: PropTypes.string.isRequired,
 }
 

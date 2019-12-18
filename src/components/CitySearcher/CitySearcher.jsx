@@ -21,12 +21,14 @@ class CitySearcher extends Component  {
             const capitalizedCity = capitalize(this.state.city)
             if(capitalizedCity === data.name){
                 this.sendData(capitalizedCity)
-            }else alert("There isn't cities with this name")
+            }else alert(`the city ${this.state.city} do not exist`)
+                  this.setState({city: ""})
         })
     }
 
     sendData = (city) =>{
         this.props.changeCitiesState(city);
+        this.setState({city: ""})
     }
     
 
@@ -41,10 +43,8 @@ class CitySearcher extends Component  {
         }
     }
 
-    render() {
-        
+    render() { 
       return (
-          
         <div className="add-city-cont">
             <TextField className="inputContain" onKeyPress={this.keyEnter} value={this.state.city} placeholder="type your city" onChange={this.handleChange}/>
             <Button className= "buttonContain" onClick= {this.handleClick} variant="contained" color="primary">add city</Button>
