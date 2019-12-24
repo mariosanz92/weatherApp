@@ -1,17 +1,17 @@
-/* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import getUrlWeatherByCity from './../../services/getUrlWeatherByCity';
+import {getUrlWeatherByCity} from './../../services/getUrlWeatherByCity';
 import {capitalize} from './../../notdependencies';
 import "./styles.css"
 
 
-class CitySearcher extends Component  { 
+class CitySearcher extends Component  {
+
     constructor(props) {
         super(props);
         this.state = {city: ""};
-      }
+    }
 
     handleClick = () => {
         const api_weather = getUrlWeatherByCity(this.state.city)
@@ -19,9 +19,9 @@ class CitySearcher extends Component  {
           return resolve.json()      
         }).then(data => {
             const capitalizedCity = capitalize(this.state.city)
-            if(capitalizedCity === data.name){
+            if (capitalizedCity === data.name) {
                 this.sendData(capitalizedCity)
-            }else alert(`the city ${this.state.city} do not exist`)
+            } else alert(`the city ${this.state.city} do not exist`)
                   this.setState({city: ""})
         })
     }
@@ -31,11 +31,9 @@ class CitySearcher extends Component  {
         this.setState({city: ""})
     }
     
-
     handleChange = event => {
         this.setState({city: event.target.value})   
     }
-
 
     keyEnter = (event) => {
         if (event.key === "Enter") {

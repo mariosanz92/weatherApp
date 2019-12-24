@@ -10,11 +10,9 @@ import './styles.css';
 const WeatherData = ({ data: {temperature, weatherState, humidity, wind } }) => {
 
     return (
-    <div className = "weatherDataCont" >
-        
+    <div className = "weatherDataCont" >    
         <WeatherTemperature temperature= {temperature} weatherState={weatherState}/>
-        <WeatherExtraInfo humidity= {humidity} wind= {wind}/>
-        
+        <WeatherExtraInfo humidity= {humidity} wind= {wind}/>    
     </div>
     )
 }
